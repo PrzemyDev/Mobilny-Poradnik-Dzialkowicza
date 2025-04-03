@@ -11,7 +11,7 @@ Prezentacja pracy inż. - Xamarin.Forms
 </ul>
 
 <img src="https://raw.githubusercontent.com/PrzemyDev/Mobilny-Poradnik-Dzialkowicza-preview/main/Preview/scr_prev1.PNG" alt="PreviewImage..."/>
-<a href="https://github.com/PrzemyDev/Mobilny-Poradnik-Dzialkowicza-preview/blob/main/Preview/PresPreview.odp" >Prezentacja widoków aplikacji</a>
+<a href="https://github.com/PrzemyDev/Mobilny-Poradnik-Dzialkowicza-preview/blob/main/Preview/PresPreview.pdf" >Prezentacja widoków aplikacji</a>
 
 Wykorzystane pakiety NuGet: 
 - FirebaseDatabase.net
