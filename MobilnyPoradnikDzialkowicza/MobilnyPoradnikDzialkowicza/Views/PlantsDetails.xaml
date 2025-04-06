@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.PlantsDetails"
+             xmlns:helpers="clr-namespace:MobilnyPoradnikDzialkowicza.Helpers"
+             Background="#353535"
+             Title="Encyklopedia">
+    <ContentPage.Resources>
+        <helpers:Base64ToImage x:Key="Base64ToImage"/>
+    </ContentPage.Resources>
+    <ScrollView>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image x:Name="imgPlantImage" Source="{Binding PlantImage, Converter={StaticResource Base64ToImage}}"
+                   HorizontalOptions="Fill"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackLayout Orientation="Vertical" Margin="3,0,3,10">
+                <StackLayout Margin="0,5,0,0">
+                    <Label x:Name="lblPlantName" HorizontalOptions="Center"
+                           FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+                </StackLayout>
+                <Label x:Name="lblPlantDescription" Margin="15,0" FontSize="18" TextColor="White"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,5,0,0">
+                    <Image Source="flyoutAboutWhite.png" HeightRequest="50" Margin="20,0"/>
+                        <StackLayout Orientation="Vertical">
+                            <Label x:Name="lblPlantAdditionalOne" TextColor="White" />
+                            <Label x:Name="lblPlantAdditionalTwo" TextColor="White" />
+                            <Label x:Name="lblPlantAdditionalThree" TextColor="White" />
+                        </StackLayout>
+                    </StackLayout>
+            </StackLayout>
+        </Grid>
+    </Grid>
+    </ScrollView>
+</ContentPage>

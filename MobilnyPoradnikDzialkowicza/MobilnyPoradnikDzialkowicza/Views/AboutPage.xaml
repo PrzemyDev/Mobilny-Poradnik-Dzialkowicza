@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.AboutPage"
+             Title="O aplikacji"
+             Background="Black">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="aboutBg.jpg" Aspect="AspectFill" Opacity="0.3"/>
+            <ScrollView>
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Witaj działkowiczu!" FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,5,0,0" TextColor="White"/>
+                    <Label Text="Aplikacja ta została stworzona, by pomóc Ci we weszelkich aspektach prowadzenia działki. Aby zmieniać strony, przyciśnij w ikonę menu, w lewym górnym kącie ekranu, a następnie wybierz odpowiednią opcję."
+                       Margin="5" TextColor="White" FontSize="Medium"/>
+                    <Label Text="Korzystanie z modułów aplikacji :"
+                       HorizontalOptions="Center"  FontSize="Medium"
+                       Margin="0,0,0,5" TextColor="White"/>
+                    <StackLayout Margin="8">
+                    <Label Text="• Encyklopedia - dzieli się na dwa widoki: rośliny ozdobne oraz rośliny jadalne, które wybiera się w górnej części strony. Poniżej znajduje się wyszukiwarka, dzięki której można szybciej znaleźć interesującą nas roślinę. Kliknięcie w dowolną roślinę, przekieruje nas do strony z informacjami o niej." 
+                      FontSize="Medium"
+                      Margin="0,0,0,5" TextColor="White"/>
+                    <Label Text="• Poradnik - Tutaj znajdują się wpisy z poradami czy ciekawostkami dotyczącymi zajmowania się działką. Wystarczy kliknąć w odpowiedni wpis, aby pokazał się on na ekranie."
+                        FontSize="Medium"
+                        Margin="0,0,0,5" TextColor="White"/>
+                    <Label Text="• Przepisy - Znajdują się tutaj przepisy różnych smakowitych potraw, które idalnie nadadzą się do grillowania na działce! Szukanie interesujących nas potraw usprawni znajdująca się w górnej części strony wyszukiwarka."
+                       FontSize="Medium"
+                       Margin="0,0,0,5" TextColor="White"/>
+                    <Label Text="• Notatki - Jest to obszar do notowania przemyśleń, zadań, czy też przypomnień. Można tworzyć tutaj dowolne notatki, a w razie potrzeby edytować i usuwać je."
+                       FontSize="Medium"
+                       Margin="0,0,0,5" TextColor="White"/>
+                    <Label Text="• Pogoda - Podstawowe informacje pogodowe wraz z prognozą na następne dni. Domyślna lokalizacja ustawiona jest obecnie na Rzeszów, dlatego chąc ją zmienić, należy wcisnąć przycisk 'Zmień lokalizację', a następnie dokonać wyboru, czy sami wpiszemy nazwę miejscowości, czy też użyjemy modułu GPS, co pozwoli na zidentfikowanie i pobranie danych automatycznie przez aplikację."
+                       FontSize="Medium"
+                       Margin="0,0,0,5" TextColor="White"/>
+                    </StackLayout>
+                    <Label Text="Udanego działkowania!" FontSize="Medium"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,10" TextColor="White"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

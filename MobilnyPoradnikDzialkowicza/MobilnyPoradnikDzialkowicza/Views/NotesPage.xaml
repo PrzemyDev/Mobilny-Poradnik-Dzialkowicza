@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.NotesPage"
+             BackgroundColor="#252525"
+             Title="Notatki">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackLayout  Orientation="Vertical">
+                <ListView x:Name="notesCollection" HasUnevenRows="True"
+                          ItemTapped="NotesCollection_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                        <StackLayout Background="#353535" Margin="5">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Data utworzenia:" Margin="5,0,0,0" TextColor="White"/>
+                                            <Label Text="{Binding CreatedDate}" TextColor="White" />
+                                            </StackLayout>
+                                            <Label Text="{Binding Title}" HorizontalOptions="Center"
+                                            FontSize="Title" Margin="5,-5" TextColor="White"/>
+                                        <Label Text="{Binding Description}"  TextColor="White"
+                                            FontSize="Medium" Margin="5,0,5,5" MaxLines="3"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Button x:Name="btnNewNoteEditor" Text="Dodaj notatkę" Clicked="btnNewNoteEditor_Clicked"
+                    BackgroundColor="LightSeaGreen" TextColor="White"/>
+        </Grid>
+    </Grid>
+</ContentPage>

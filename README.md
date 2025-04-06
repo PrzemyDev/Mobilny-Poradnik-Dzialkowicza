@@ -1,5 +1,5 @@
 # Mobilny-Poradnik-Dzialkowicza-preview
-Prezentacja pracy inż. - Xamarin.Forms
+Prezentacja pracy inż. wykonanej w Xamarin.Forms. 
 <H4>Aplikacja mobilna, która wspiera wszelkiego rodzaju prace prowadzone na ogrodach działkowych oraz związane z nimi czynności rekreacyjne.</H1>
 <p>Zawiera następujące moduły:</p>
 <ul>
@@ -17,4 +17,3 @@ Wykorzystane pakiety NuGet:
 - FirebaseDatabase.net
 - sqlite-net-pcl
 - Newtonsoft.Json
-

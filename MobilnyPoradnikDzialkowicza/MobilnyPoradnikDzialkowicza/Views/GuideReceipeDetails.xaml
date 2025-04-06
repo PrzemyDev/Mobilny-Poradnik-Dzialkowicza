@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.GuideReceipeDetails"
+             Background="#353535">
+    <ScrollView>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image x:Name="imgRecord"
+                   HorizontalOptions="Fill"/>
+        </Grid>
+            <Grid Grid.Row="1">
+                <StackLayout Orientation="Vertical" Margin="3,0,3,10">
+                    <StackLayout>
+                        <Label x:Name="lblDate" HorizontalOptions="Center" Margin="5" TextColor="White"/>
+                        <Label x:Name="lblTitle" HorizontalOptions="Center" TextColor="White"
+                       FontSize="Large" FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout>
+                    <Label x:Name="lblDivOne" Text="info" FontAttributes="Bold" TextDecorations="Underline" FontSize="Medium"
+                           TextColor="White" Margin="10,5,0,-10"/>
+                        <Label x:Name="lblDescription" Margin="15,0" FontSize="18" TextColor="White"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label x:Name="lblDivTwo" Text="info" FontAttributes="Bold" TextDecorations="Underline" FontSize="Medium" Margin="10,5,0,-10" TextColor="White"/>
+                        <Label x:Name="lblDescriptionAdd" Margin="15,0" FontSize="18" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

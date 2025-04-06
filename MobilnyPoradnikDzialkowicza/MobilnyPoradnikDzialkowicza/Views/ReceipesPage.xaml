@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.ReceipesPage"
+             xmlns:helpers="clr-namespace:MobilnyPoradnikDzialkowicza.Helpers"
+             Background="Black"
+             Title="Przepisy">
+    <ContentPage.Resources>
+        <helpers:Base64ToImage x:Key="Base64ToImage"/>
+    </ContentPage.Resources>
+    <Grid>
+        <Image Source="receipesBg.jpg" Aspect="AspectFill" Opacity="0.5"/>
+        <StackLayout>
+            <SearchBar x:Name="searchReceipes" Placeholder="wyszukaj..." PlaceholderColor="White" TextColor="White" TextChanged="searchReceipes_TextChanged" BackgroundColor="#BF20B2AA"/>
+        <CollectionView x:Name="cvRecipesRecords" SelectionMode="Single" SelectionChanged="cvRecipesRecords_SelectionChanged"
+                        ItemsLayout="VerticalGrid,1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                            <Frame Background="LightSeaGreen" Padding="5" CornerRadius="20" HasShadow="False" Margin="0,5">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame CornerRadius="20" Padding="0" BackgroundColor="Transparent">
+                                    <Image Source="{Binding RecordsImage, Converter={StaticResource Base64ToImage}}" Aspect="AspectFill" 
+                                           MinimumWidthRequest="50" MinimumHeightRequest="50"
+                                              HeightRequest="120" WidthRequest="180" HorizontalOptions="Start" />
+                                </Frame>
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                                    <Label Text="{Binding Date}" HorizontalOptions="Center" FontSize="Body" TextColor="White"/>
+                                        <Label Text="{Binding Title}" HorizontalOptions="Center" FontSize="22" TextColor="White"
+                                       Margin="0,-6,0,0"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    </Grid>
+</ContentPage>

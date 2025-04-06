@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MobilnyPoradnikDzialkowicza.Helpers"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.OrnamentsPage"
+             Background="Black"
+             Title="Encyklopedia">
+    <ContentPage.Resources>
+        <helpers:Base64ToImage x:Key="Base64ToImage"/>
+    </ContentPage.Resources>
+    <Grid>
+        <Image Source="ornamentBG.jpg" Aspect="AspectFill" Opacity="0.9"/>
+        <StackLayout>
+            <SearchBar x:Name="searchOrnaments" Placeholder="wyszukaj..." PlaceholderColor="White" TextColor="White" TextChanged="searchOrnaments_TextChanged" BackgroundColor="#BF20B2AA"/>
+            <CollectionView x:Name="collectionOrnaments" ItemsSource="{Binding PlantsOrnament}" 
+                            SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged"
+                            ItemsLayout="VerticalGrid,3">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80" />
+                                <RowDefinition Height="20" />
+                            </Grid.RowDefinitions>
+                            <StackLayout Orientation="Vertical" BackgroundColor="AntiqueWhite" Margin="0,0,0,-10">
+                                <Image Source="{Binding PlantImage, Converter={StaticResource Base64ToImage}}"
+                                       Grid.Row="0" Aspect="AspectFill" HeightRequest="60" WidthRequest="60"/>
+                                <Label Text="{Binding PlantName}" Grid.Row="1" FontSize="Medium"
+                                       HorizontalOptions="Center" LineBreakMode="TailTruncation"
+                                       Margin="0,-5,0,0" TextColor="#353535"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </Grid>
+</ContentPage>

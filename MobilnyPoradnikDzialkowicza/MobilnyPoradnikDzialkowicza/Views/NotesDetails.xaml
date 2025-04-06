@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Views.NotesDetails"
+             BackgroundColor="#222222">
+    <Grid>
+        <Grid x:Name="gridEditPage" IsVisible="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" x:Name="layoutOptions">
+                <StackLayout Orientation="Vertical">
+                    <ScrollView Grid.Row="0">
+                        <StackLayout Margin="6" Background="#353535">
+                            <StackLayout Orientation="Horizontal" Margin="5,0">
+                                <Label Text="Data utworzenia:" TextColor="White" />
+                                <Label x:Name="lblNotesCreationDate" FontSize="Subtitle" TextColor="White"/>
+                            </StackLayout>
+                            <Label x:Name="lblNotesTitle" FontSize="Title" HorizontalOptions="Center" Margin="5,-5" 
+                                   TextColor="White"/>
+                            <Label x:Name="lblNotesDescription" FontSize="Medium" Margin="5,0,5,5"
+                                   TextColor="White"/>
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button x:Name="btnEditNote" Text="Edytuj notatkę" Clicked="EditNote_Clicked"
+                                Background="LightSeaGreen" TextColor="White"/>
+                        <Button x:Name="btnDeleteNote" Text="Usuń notatkę" Clicked="DeleteNote_Clicked"
+                                Background="LightSeaGreen" TextColor="White" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="0" x:Name="layoutNoteEdition" Margin="20" IsVisible="False">
+                <StackLayout>
+                    <Label Text="Edytuj notatkę:" TextColor="White" />
+                <Entry Placeholder="Nowy tytuł" MaxLength="50" TextColor="White"
+                       x:Name="entrEditTitle" PlaceholderColor="White"/>
+                    <ScrollView>
+                        <Editor AutoSize="TextChanges" Placeholder="Nowa treść notatki" TextColor="White"
+                       x:Name="edtrEditDescritpion" MaxLength="5000" PlaceholderColor="White"/>
+                    </ScrollView>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                        <Button x:Name="btnAcceptEdit" Text="Potwierdź"  TextColor="White"
+                            Clicked="AcceptEdit_Clicked" Background="LightSeaGreen"/>
+                        <Button x:Name="btnCancelEdit" Text="Anuluj"  TextColor="White"
+                            Clicked="CancelEdit_Clicked" Background="LightSeaGreen"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+        <Grid x:Name="gridCreatePage" IsVisible="False">
+            <Grid Grid.Row="0" Margin="20">
+                <StackLayout>
+                    <Label Text="Utwórz nową notatkę:" TextColor="White"/>
+                    <Entry Placeholder="Tytuł notatki" MaxLength="50"
+                       x:Name="entrNewTitle" TextColor="White" PlaceholderColor="White"/>
+                    <ScrollView>
+                        <Editor AutoSize="TextChanges" Placeholder="Treść notatki"
+                       x:Name="edtrNewDescritpion" MaxLength="5000" TextColor="White" 
+                                PlaceholderColor="White"/>
+                    </ScrollView>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                        <Button x:Name="btnAcceptCreate" Text="Dodaj notatkę" TextColor="White"
+                            Clicked="AcceptCreate_Clicked" Background="LightSeaGreen"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

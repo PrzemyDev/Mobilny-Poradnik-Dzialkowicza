@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell  xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="MobilnyPoradnikDzialkowicza.AppShell"
+        xmlns:views="clr-namespace:MobilnyPoradnikDzialkowicza.Views"
+        xmlns:controls="clr-namespace:MobilnyPoradnikDzialkowicza.Controls"
+        BackgroundColor="LightSeaGreen">
+    <Shell.FlyoutBackground>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightSeaGreen" Offset="0.1"/>
+            <GradientStop Color="LightGreen" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Shell.FlyoutBackground>
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="O aplikacji" ContentTemplate="{DataTemplate views:AboutPage}" 
+                      Icon="flyoutLightbulb.png"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Encyklopedia" Icon="flyoutEncyclopedia.png">
+            <ShellContent Title="Ozdobne" ContentTemplate="{DataTemplate views:OrnamentsPage}" />
+            <ShellContent Title="Jadalne" ContentTemplate="{DataTemplate views:EdiblesPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Poradnik" ContentTemplate="{DataTemplate views:GuidesPage}" 
+                      Icon="flyoutLightbulb.png"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Przepisy" ContentTemplate="{DataTemplate views:ReceipesPage}" 
+                      Icon="flyoutBBQ.png"/>
+    </FlyoutItem>
+    
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Notatki" ContentTemplate="{DataTemplate views:NotesPage}" 
+                      Icon="flyoutNotes.png"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Pogoda" ContentTemplate="{DataTemplate views:ForecastPage}" 
+                      Icon="flyoutSun.png"/>
+    </FlyoutItem>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontSize="Large"
+                       FontAttributes="Italic"
+                       TextColor="Black"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+</Shell>

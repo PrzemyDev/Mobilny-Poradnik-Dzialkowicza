@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilnyPoradnikDzialkowicza.Controls.FlyoutFooter">
+    <StackLayout BackgroundColor="Green">
+        <Label Text="Mobilny poradnik działkowicza"
+               TextColor="Aquamarine"
+               FontAttributes="Bold"
+               TextTransform="Uppercase"
+               FontSize="16"
+               HorizontalTextAlignment="Center"
+               Margin="0,2,0,0"/>
+        <Label Text="PrzemyDev 2023"
+               FontAttributes="Bold"
+               TextColor="Aquamarine"
+               HorizontalOptions="Center" 
+               Margin="0,-5,0,5"/>
+    </StackLayout>
+</ContentView>
